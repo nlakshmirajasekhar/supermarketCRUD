@@ -1,1 +1,25 @@
-<p>master works!</p>
+<app-navbar></app-navbar>
+<div>
+    <div class="row">
+        <div class="col-2 " style="height:100vh !important;background-color: blanchedalmond;">
+
+            <ul>
+                <li>
+                    <nav (click)="getat('Items')" class="mb-4 pt-4">Items</nav>
+                </li>
+                <li>
+                    <nav (click)="getat('Price LIst')" class="mb-4">Price List</nav>
+                </li>
+                <li>
+                    <nav (click)="getat('Outlets')"> Outlets </nav>
+                </li>
+            </ul>
+        </div>
+        <div class="col">
+            <ng-content></ng-content>
+
+               
+        </div>
+            
+    </div>
+</div>

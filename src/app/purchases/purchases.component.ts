@@ -12,4 +12,8 @@ export class PurchasesComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  getat(str:string)
+  {
+    
+  }
 }

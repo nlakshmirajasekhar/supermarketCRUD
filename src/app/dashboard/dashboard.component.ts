@@ -13,22 +13,6 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  makechange(str:string)
-  {
-    switch(str)
-    {
-      case 'master':
-        this.router.navigateByUrl('');
-        break;
-        case 'purchases':
-          this.router.navigateByUrl('purchases');
-          break;
-          case 'sales':
-            this.router.navigateByUrl('sales');
-            break;
-    }
-
-
-  }
+  
 
 }

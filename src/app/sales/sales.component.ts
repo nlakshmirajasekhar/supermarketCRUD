@@ -11,5 +11,9 @@ export class SalesComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  getat(str:string)
+  {
+    
+  }
 
 }

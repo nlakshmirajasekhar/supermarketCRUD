@@ -1,0 +1,41 @@
+<app-master>
+
+<div class="col pt-4 pl-4" >
+    <div class="row">
+        <input type="text" placeholder="Search " [(ngModel)]='searchitem' (input)='finditem()'>
+        <input type="button" value="Search" class="btn-primary ml-3"  >
+    </div>
+    <div class="row justify-content-center mt-3">
+        <input type="text" placeholder="ItemName" class="col ml-3" [(ngModel)]='itemnamet'>
+        <input type="text" placeholder="ItemUOM" class="col ml-3" [(ngModel)]='uomt' >
+        <input type="text" placeholder="ItemPrice" class="col ml-3">
+<input type="button" value="Create" class="col-2 ml-3" (click)="trans()">
+
+    </div>
+    <table class="mt-4 table-primary">
+        <thead>
+            <tr>
+                <th class=" col">SLNO</th>
+                <th class="col">Item name</th>
+                <th class=" col">Item qty</th>
+                <th class=" col"> price list</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor='let it of tmp'>
+                <td>{{it.materialName}}</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <!-- <td>{{it.itemname}}</td>
+                <td>{{it.uom}}</td> -->
+                <td><input type="button" value="Edit" (click)="trans()"></td>
+                <td><input type="button" value="Delete"></td>
+
+            </tr>
+        </tbody>
+
+    </table>
+</div>
+</app-master>
