@@ -10,8 +10,12 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { OutletComponent } from './outlet/outlet.component';
 import {HttpClient,HttpClientModule} from '@angular/common/http';
 import {ItemtransComponent} from './itemtrans/itemtrans.component';
-import { SidenavComponent } from './sidenav/sidenav.component';
-import { ItempageComponent } from './itempage/itempage.component'
+import { ItempageComponent } from './itempage/itempage.component';
+import { OutlettraComponent } from './outlettra/outlettra.component';
+import { PurchasecpageComponent } from './purchasefolder/purchasecpage/purchasecpage.component';
+import { PurchaseviewpageComponent } from './purchasefolder/purchaseviewpage/purchaseviewpage.component';
+import { SalescpageComponent } from './salesfolder/salescpage/salescpage.component';
+import { SalesviewComponent } from './salesfolder/salesview/salesview.component'
 
 @NgModule({
   declarations: [
@@ -22,8 +26,12 @@ import { ItempageComponent } from './itempage/itempage.component'
     NavbarComponent,
     OutletComponent,
     ItemtransComponent,
-    SidenavComponent,
-    ItempageComponent
+    ItempageComponent,
+    OutlettraComponent,
+    PurchasecpageComponent,
+    PurchaseviewpageComponent,
+    SalescpageComponent,
+    SalesviewComponent
   ],
   imports: [
     BrowserModule,

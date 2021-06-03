@@ -1,0 +1,76 @@
+<app-sales>
+    <div class="container" style="min-height: 100%;position: fixed;">
+    <div class=" container justify-content-center mt-4 " >
+        <input type="text" class=" mb-2 mt -2 " placeholder="customer Name" [(ngModel)]='addhead.customer'>
+        <div class="row d-flex mt-4">
+            <input type="text" class=" col-3 ml-3 mr-2 mt-2" placeholder="Address" [(ngModel)]='addhead.address'>
+
+            <input type="text" class=" col-3 ml-3 mr-2 mt-2" placeholder="Zip" [(ngModel)]='addhead.zip'>
+            <input type="text" class=" col-3 ml-3 mr-2 mt-2" placeholder="MIR"  [(ngModel)]='addhead.mir' >
+        </div>
+        <div class="row d-flex mt-4 mb-4">
+            <input type="text" class=" col-3 ml-3 mr-2 mt-2" placeholder="country"  [(ngModel)]='addhead.country'>
+            <input type="text" class=" col-3 ml-3 mr-2 mt-2" placeholder="district"  [(ngModel)]='addhead.district'>
+            <input type="text" class=" col-3 ml-3 mr-2 mt-2" placeholder="city"  [(ngModel)]='addhead.city'>
+        </div>
+
+        <div class="row d-flex mt-4 mb-4">
+            <input type="text" class=" col-3 ml-3 mr-2 mt-2 " placeholder="Phone NO"  [(ngModel)]='addhead.phoneno'>
+            <input type="text" class=" col-3 ml-3 mr-2 mt-2" placeholder="mail"  [(ngModel)]='addhead.mail'>
+            <input type="text" class=" col-3 ml-3 mr-2 mt-2" placeholder="fax"  [(ngModel)]='addhead.fax'>
+        </div>
+        <div class="row d-flex mt-4 mb-4">
+            <input type="text" class=" col-3 ml-3 mr-2 mt-2" placeholder="Invoice NO" [(ngModel)]='addhead.invoiceno'>
+            <input type="date" class=" col-3 ml-3 mr-2 mt-2" placeholder="date"  [(ngModel)]='addhead.date'>
+            <input type="text" class=" col-3 ml-3 mr-2 mt-2" placeholder="transponter"  [(ngModel)]='addhead.transporter'>
+        </div>
+    </div>
+     <div class="row">
+         <input type="text" class="col" placeholder="Item" [(ngModel)]='addline.item'>
+         <input type="text" class="col" placeholder="batch" [(ngModel)]='addline.batch'>
+         <input type="text" class="col" placeholder="qty" [(ngModel)]='addline.qty'>
+         <input type="text" class="col"  placeholder="UOm" [(ngModel)]='addline.uom'>
+         <input type="text" class="col" placeholder="Desc" [(ngModel)]='addline.description'>
+         <input type="text" class="col" placeholder="rate" [(ngModel)]='addline.rate'>
+         <input type="button" class="col" value="Add" (click)='addlines()'>
+     </div>
+    <table class="table" style="position: relative">
+        <thead>
+            <td>Item</td>
+            <td>batch</td>
+            <td>Qty</td>
+            <td>UOM</td>
+            <td>Rate</td>
+            <td>description</td>
+            <td>cost</td>
+        </thead>
+        <tbody *ngFor='let lit of displaylines'>
+            <td>
+                {{lit.item}}
+            </td>
+            <td>
+                {{lit.batch}}
+
+            </td>
+            <td>{{lit.qty}}</td>
+            <td>{{lit.uom}}</td>
+            <td>{{lit.rate}}</td>
+            <td>{{lit.description}}</td>
+            <td>{{lit.cost}}</td>
+
+
+        </tbody>
+    </table>
+    
+    <div style="position: absolute;bottom: 60px;" >
+        <input type="text" class="row justify-content-end" placeholder="Baseamount" disabled>
+        <input type="text" class="row justify-content-end" placeholder="discount">
+        <input type="text" class="row justify-content-end"  placeholder="taxes">
+        <input type="text" class="row justify-content-end" placeholder="Total" disabled>
+
+
+
+
+</div>
+</div>
+</app-sales>

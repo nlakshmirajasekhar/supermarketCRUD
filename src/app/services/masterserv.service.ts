@@ -13,5 +13,16 @@ export class MasterservService {
    {
      return this.http.get('https://bitappsinterns.azurewebsites.net/api/Items/GetItems');
    }
-   
+   public setitem(obj:any)
+   {
+     return this.http.post('',+obj);
+   }
+   public setoutlet(obj:any)
+   {
+     return this.http.post('',+obj);
+   }
+   public deloutlet(obj:any)
+   {
+     return this.http.delete('');
+   }
 }

@@ -20,10 +20,10 @@ export class NavbarComponent implements OnInit {
         this.router.navigateByUrl('');
         break;
       case 'purchases':
-        this.router.navigateByUrl('purchases');
+        this.router.navigateByUrl('purchasepage');
         break;
       case 'sales':
-        this.router.navigateByUrl('sales');
+        this.router.navigateByUrl('createsales');
         break;
     }
 
