@@ -1,13 +1,13 @@
 
 <app-master>
     <div class="form-group">
-        <label for="outlet Name">Outlet name</label>
-        <input type="text" class="form-control">
+        <label for="outlet Name " >Outlet name</label>
+        <input type="text" class="form-control" [(ngModel)]='outletobj.outletname'>
         <label for="Item UOM">Address</label>
-        <input type="text" class="form-control">
+        <input type="text" class="form-control" [(ngModel)]='outletobj.address'>
         <label for="Item Price">Phone no</label>
-        <input type="text" class="form-control">
-        <input type="button" value="Submit" class="mt-3">
+        <input type="text" class="form-control"  [(ngModel)]='outletobj.phoneno'>
+        <input type="button" value="Submit" class="mt-3" (click)='submit()' >
         <input type="button" value="Back" class="mt-3 ml-3" (click)="back()">
     </div>
 

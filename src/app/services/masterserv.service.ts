@@ -11,11 +11,15 @@ export class MasterservService {
    }
    public getitems()
    {
-     return this.http.get('https://bitappsinterns.azurewebsites.net/api/Items/GetItems');
+     return this.http.get('https://localhost:5001/api/Items/GetItems');
    }
    public setitem(obj:any)
    {
      return this.http.post('',+obj);
+   }
+   public getout()
+   {
+     return this.http.get("https://localhost:5001/api/outlet/GetOutlets")
    }
    public setoutlet(obj:any)
    {

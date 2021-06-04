@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import { MasterservService } from '../services/masterserv.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-outlet',
@@ -8,15 +10,17 @@ import {HttpClient} from '@angular/common/http';
 })
 export class OutletComponent implements OnInit {
 
-  public itemslist:any=[]=[];
-  public itemtemp:any=[]=[];
-  constructor(private http:HttpClient) {
+  
+  public outletlist:any=[]=[];
+  public outlettemp:any=[]=[];
+  constructor(private getout:MasterservService,private router:Router) {
 
-    this.getitems().subscribe(
+    this.getout.getout().subscribe(
       ress=>
       {
-        this.itemslist=ress;
-        this.itemtemp=this.itemslist;
+        console.log(ress);
+        this.outletlist=ress;
+        this.outlettemp=this.outletlist;
 
       }
 
@@ -29,10 +33,12 @@ export class OutletComponent implements OnInit {
 
 
   }
-  public getitems()
-  {
-    return this.http.get('');
-  }
+create()
+{
+   this.router.navigateByUrl('outlettrans')
 
+}  
+
+  
 
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SalesService } from 'src/app/services/sales.service';
 
 @Component({
   selector: 'app-salesview',
@@ -7,7 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SalesviewComponent implements OnInit {
 
-  constructor() { }
+  public salesbill:any=[];
+  public salesbiltmp:any=[];
+  constructor(private salesser:SalesService) { 
+    this.salesser.getsales().subscribe(
+      res=>{
+        var ds=res;
+        this.salesbill=ds;
+        this.salesbiltmp=this.salesbill;
+      console.log(res);
+      })
+
+
+  }
 
   ngOnInit(): void {
   }

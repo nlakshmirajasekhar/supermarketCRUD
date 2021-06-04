@@ -9,7 +9,7 @@ export class SalesService {
   constructor(private http:HttpClient) { }
   public getsales()
   {
-    return this.http.get('');
+    return this.http.get('https://localhost:5001/api/sales/getSalesbyid');
 
   }
   public getsalesbyID()

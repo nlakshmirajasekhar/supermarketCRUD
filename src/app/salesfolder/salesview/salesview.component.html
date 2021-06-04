@@ -4,22 +4,22 @@
     </div>
     <table class="table">
         <thead class="primary">
-            <td>supplier Name</td>
+            <td>customer Name</td>
             <td>invoiceno</td>
             <td>sale date</td>
             <td> item </td>
+            <td>QtY</td>
             <td>baseamount</td>
-            <td>discount</td>
-            <td>taxes</td>
             <td>total</td>
         </thead>
-        <tbody>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+        <tbody *ngFor='let sl of salesbiltmp'>
+            <td>{{sl.customer}}</td>
+            <td>{{sl.sid}}</td>
+            <td>28-apr-2001</td>
+            <td>{{sl.pitem}}</td>
+            <td>{{sl.qty}}</td>
+            <td>{{sl.baseamt}}</td>
+            <td>{{sl.totalamt}}</td>
             <td></td>
             <td></td>
             <td></td>

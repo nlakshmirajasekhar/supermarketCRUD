@@ -1,5 +1,5 @@
 <app-purchases>
-    <div class="container" style="min-height: 100%;position: fixed;">
+    <div class="container" style="min-height: 100%">
         <div class=" container justify-content-center mt-4 " >
             <input type="text" class=" mb-2 mt -2 " placeholder="Supplier Name" [(ngModel)]='addhead.supplier'>
             <div class="row d-flex mt-4">
@@ -34,6 +34,7 @@
              <input type="text" class="col" placeholder="rate" [(ngModel)]='addline.rate'>
              <input type="button" class="col" value="Add" (click)='addlines()'>
          </div>
+         <div style="width:100%;overflow-y:scroll;height: 200px;">
         <table class="table" >
             <thead>
                 <td>Item</td>
@@ -44,7 +45,7 @@
                 <td>description</td>
                 <td>cost</td>
             </thead>
-            <tbody *ngFor='let lit of displaylines' style="position: fixed;">
+            <tbody *ngFor='let lit of displaylines' >
                 <td>
                     {{lit.item}}
                 </td>
@@ -57,20 +58,22 @@
                 <td>{{lit.rate}}</td>
                 <td>{{lit.description}}</td>
                 <td>{{lit.cost}}</td>
+                <td><input type="button"  value="delete " (click)="deleterow(lit)"></td>
     
     
             </tbody>
         </table>
-        
-        <div style="position: absolute;bottom: 60px;" >
+    </div>        
+        <div style="position: absolute;bottom: 20px;" >
             <input type="text" class="row justify-content-end" placeholder="Baseamount" disabled>
             <input type="text" class="row justify-content-end" placeholder="discount">
             <input type="text" class="row justify-content-end"  placeholder="taxes">
             <input type="text" class="row justify-content-end" placeholder="Total" disabled>
     
-    
+    <input type="button" value="Save" (click)="savedetails()">
     
     
     </div>
+
     </div>
 </app-purchases>

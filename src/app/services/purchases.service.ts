@@ -9,7 +9,7 @@ export class PurchasesService {
   constructor(private http:HttpClient) { }
  public getpurchases()
  {
-   return this.http.get('');
+   return this.http.get('https://localhost:5001/api/Purchases/getpurchasesbyID');
  }
  public getpurchasebyID()
  {

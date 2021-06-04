@@ -15,7 +15,7 @@
 
 
         <input type="button" name="" id="" value="Create" class=" col ml-1 btn-secondary "
-            style="padding-left: 10px;width:10px">
+            style="padding-left: 10px;width:10px" (click)='create()'>
     </div>
     <div class="row">
     <table class="mt-4 table">
@@ -29,10 +29,10 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
+            <tr *ngFor='let ots of outlettemp'>
+                <td>{{ots.oid}}</td>
+                <td>{{ots.outletaddress}}</td>
+                <td>{{ots.outletaddress}}</td>
                 <td></td>
 
             </tr>
