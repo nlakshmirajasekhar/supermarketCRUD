@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { MasterservService } from '../services/masterserv.service';
 
 @Component({
   selector: 'app-outlettra',
@@ -12,7 +13,7 @@ export class OutlettraComponent implements OnInit {
     address:'',
     phoneno:'',
     }
-  constructor(private router:Router) { }
+  constructor(private router:Router,private ser:MasterservService) { }
 
   ngOnInit(): void {
   }
@@ -27,7 +28,12 @@ submit()
   outletobj:this.outletobj,
   trans:1 
   }
-  console.log(obj);
+  this.ser.setoutlet(obj).subscribe(
+   res=> {
+     console.log(res);
+      
+    }
+  )
   this.clear();
 }
 update()

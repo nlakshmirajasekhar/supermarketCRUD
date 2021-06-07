@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PurchasesService } from 'src/app/services/purchases.service';
 
 @Component({
   selector: 'app-purchasecpage',
@@ -20,24 +21,23 @@ export class PurchasecpageComponent implements OnInit {
 public linestosave:any=[];
 
   public addhead:any={
-    supplier:'',
-    address:'',
-    zip:'',
-    country:'',
-    city:'',
-    district:'',
-    phoneno:'',
-    mail:'',
-    fax:'',
-    invoiceno:'',
-    date:'',
-    transporter:'Navata',
-
+    Supplier:'',
+    Zip:0,
+    Country:'',
+    City:'',
+    Mobileno:'',
+    Invoiceno:'',
+    Purchasedate:'',
+    Transporter:'Navata',
+    Baseamt:0,
+    Taxes:0,
+    Discount:0,
+    Totamount:0
   }
   public displaylines:any=[]=[];
 
 
-  constructor() { }
+  constructor(private purchaseser:PurchasesService) { }
 
   ngOnInit(): void {
   }
@@ -54,9 +54,12 @@ public linestosave:any=[];
         batch:this.addline.batch,
         cost:this.addline.qty*this.addline.rate,
       }
-
     );
+    this.addsum();
     this.clear();
+    console.log(this.displaylines);
+    console.log(this.addhead);
+    
     // console.log(this.displaylines);
     // this.clearlines();
   }
@@ -103,7 +106,13 @@ console.log(this.linestosave);
       txn:1
 
     }
-console.log(obj)
+console.log(obj);
+this.purchaseser.setpurchase(obj).subscribe(
+ res=> {
+   console.log(res);
+
+  }
+)
 
 
 
@@ -132,4 +141,19 @@ console.log(obj)
     this.addline.batch='',
     this.addline.cost=0
   }
+  addsum()
+  {
+    for(var i=0;i<=this.displaylines.length;i++)
+    {
+    this.addhead.Baseamt=this.addhead.Baseamt+this.displaylines[i].cost;
+  }
+     this.makedel();
+
+}
+makedel()
+{
+  this.addhead.Totamount=this.addhead.Baseamt-this.addhead.Discount+this.addhead.Taxes;
+  
+
+} 
 }

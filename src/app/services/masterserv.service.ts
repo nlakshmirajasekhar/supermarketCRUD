@@ -1,6 +1,14 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http'
+import {HttpClient, HttpHeaders} from '@angular/common/http'
 
+
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json',
+    'charset': 'UTF-8',
+    'Access-Control-Allow-Origin': '*'
+  })
+}
 @Injectable({
   providedIn: 'root'
 })
@@ -15,7 +23,7 @@ export class MasterservService {
    }
    public setitem(obj:any)
    {
-     return this.http.post('',+obj);
+     return this.http.post('https://localhost:5001/api/Items/setItems',obj);
    }
    public getout()
    {
